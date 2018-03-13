@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.sites',
     'django.contrib.staticfiles',
+    'django_extensions',
     # 3rd party packages
     'allauth',
     'allauth.account',
@@ -129,3 +130,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 SITE_ID = 1
+
+SOCIALACCOUNT_PROVIDERS = {
+    'github': {
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    }
+}
